@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    fetch("https://randomuser.me/api/?results=20")
+    fetch("https://randomuser.me/api/?results=504")
       .then(results => {
         const people = results.json();
         return people;
@@ -17,9 +17,8 @@ class App extends Component {
       .then(people => {
         let pictures = people.results.map(pic => {
           return (
-            <div key={pic.email}>
+            <div className="imgg" key={pic.email}>
               <img src={pic.picture.medium} />
-              <span>{pic.name.first}</span>
             </div>
           );
         });
